@@ -5,14 +5,17 @@ VOLUME ["/var/www"]
 
 RUN apt-get update && \
     apt-get install -y \
+      curl \
       apache2 \
       php5 \
       php5-cli \
       libapache2-mod-php5 \
+      php5-curl \
       php5-gd \
-      php5-ldap \
+      php5-imap \
       php5-mysql \
-      php5-pgsql
+      php5-sqlite \
+      php5-xmlrpc
 
 COPY apache_default /etc/apache2/sites-available/default
 COPY run /usr/local/bin/run
